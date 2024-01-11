@@ -26,5 +26,11 @@ class Food{
         this.isFresh();
     }
 }
+
+let pizza = new Food('pizza');
+pizza.prepare();
+pizza.isFresh();
+pizza.aDayPasses();
+
 // Do not edit below this line
 module.exports = Food;

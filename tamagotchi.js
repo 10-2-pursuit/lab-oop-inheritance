@@ -87,5 +87,17 @@ class Tamagotchi{
         }
     }
 }
+
+let pet = new Tamagotchi('A');
+pet.greet();
+pet.status();
+pet.eat();
+pet.medicate();
+pet.play();
+pet.sleep();
+pet.sick();
+pet.timePasses();
+pet.badGuardian();
+
 // Do not edit below this line
 module.exports = Tamagotchi;
