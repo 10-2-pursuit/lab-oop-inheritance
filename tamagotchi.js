@@ -10,10 +10,17 @@ class Tamagotchi{
     };
 
     greet(){
-
+        console.log(`Hello, I'm ${this.name}!`)
     };
 
-    status(){};
+    status(){
+        console.log('********************');
+        console.log(`My mood is: ${this.mood}`);
+        console.log(`I'm this full: ${this.full}`);
+        console.log(`My energy is: ${this.energy}`);
+        this.sick ? console.log("I'm not sick") : console.log("I'm sick");
+        console.log('********************');
+    };
 
     eat(){
         this.full += 2;
@@ -36,11 +43,24 @@ class Tamagotchi{
     }
 
     play(){
+        this.status();
         if(this.sick == false && this.mood <= 9 && this.energy > 3){
             this.mood += 2;
-            this.energy--;
             this.full--;
         }
+        else{
+            if(this.sick == true){
+                this.mood--;
+            }
+            if(this.mood > 9){
+                this.full--;
+                this.energy--;
+            }
+            if(this.energy <= 3){
+                console.log("I am too tired to play");
+            }
+        }
+        this.energy--;
     }
 
     sleep(){
