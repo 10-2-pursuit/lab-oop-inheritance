@@ -107,5 +107,16 @@ class Tamagotchi {
     }
 
 }
+
+const myTamagotchi = new Tamagotchi("Lola");
+
+myTamagotchi.greet();
+myTamagotchi.status();
+
+myTamagotchi.eat();
+myTamagotchi.status();
+
+myTamagotchi.play();
+myTamagotchi.status();
 // Do not edit below this line
 module.exports = Tamagotchi;
