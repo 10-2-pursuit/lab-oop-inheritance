@@ -50,12 +50,62 @@ class Tamagotchi {
                     this.energy -= 1; 
                 }
         }
-//     sleep(){
-//         console.log(`${this.name} is sleeping. ZzzZZzz`);
-//         this.energy += 3;
-//         this.full -= 1;
-//         this.mood += 1;
-//     }
+
+        play(){
+            if(this.sick){
+                console.log(`${this.name} is too sick to play.`);
+                this.mood -= 1;
+                this.energy -= 1;
+            } else if (this.mood > 9){
+                console.log(`${this.name} is too happy to play.`);
+                this.energy -= 2;
+                this.full -= 1; 
+
+            } else if (this.energy <= 3){
+                console.log(`${this.name} is too tired to play.`);
+                this.energy -= 1;
+
+            } else {
+                console.log(`${this.name} is playing.`);
+                this.mood += 2;
+                this.energy -= 1;
+                this.full -= 1;
+            }
+        }
+    sleep(){
+        console.log(`${this.name} is sleeping. ZzzZZzz`);
+        this.energy += 4;
+        this.full -= 3;
+        this.mood += 1;
+    }
+
+    timePasses(){
+        if(this.sick){
+            this.mood -= 3;
+            this.full -= 2;
+            this.energy -= 2;
+        } else {
+            this.mood -= 2;
+            this.full -= 1;
+            this.energy -= 1;
+        }
+    }
+    badGuardian(){
+        console.log(`Oh No!${this.name} has been rehomed.`);
+
+        if(this.energy <= 0 || this.mood <= 0 || this.full <= 0){
+            this.rehomed = true;
+        }
+    }
+
+    checkHealth(){
+        if(this.sick){
+            console.log(`${this.name} is isck and needs medical attention.`);
+        } else if(this.mood <= 0){
+                console.log(`${this.name} is unhappy and might need more attention.`)
+        }
+    }
+
 }
 // Do not edit below this line
 module.exports = Tamagotchi;
