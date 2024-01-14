@@ -41,6 +41,10 @@ class BadFood extends Food {
         ];
     }
  
+    prepare(){
+        console.log(`I am ${this.name} and my calories are too high to count!`)
+    }
+
  
 
  
