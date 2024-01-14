@@ -31,6 +31,21 @@ avocado.isFresh();
 avocado.aDayPasses();
 
 
+class BadFood extends Food {
+    constructor(name){
+        super(name, 20);
+        this.weapons = [
+            { hitPoints: 3 },
+            { hitPoints: 4 },
+            { hitPoints: 5 }
+        ];
+    }
+ 
+ 
+
+ 
+}
+
 
 
 // Do not edit below this line
