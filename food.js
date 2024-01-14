@@ -23,7 +23,6 @@ class Food {
         this.isFresh()
     }
 }
-// const iceCream = new Food("Ice Cream", 5, true);
 
 // Do not edit below this line
 module.exports = Food;
