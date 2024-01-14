@@ -39,7 +39,17 @@ class Tamagotchi {
             console.log(`${this.name} doesn't have enough energy to eat.`);
         }
     }
-
+        medicate(){
+            if(this.sick){
+                console.log(`${this.name} is taking medicine.`);
+                this.full = 9;
+                this.energy -= 3; 
+                this.sick = false; 
+                }else{
+                    console.log(`${this.name} refuses to take medicine`);
+                    this.energy -= 1; 
+                }
+        }
 //     sleep(){
 //         console.log(`${this.name} is sleeping. ZzzZZzz`);
 //         this.energy += 3;
