@@ -31,7 +31,36 @@ class Tamagotchi {
         this.energy--;
         if(this.full >10) 
             this.sick = true;
-        
+    }
+    medicate() {
+        if (this.sick === true) {
+            this.full = 9;
+            this.energy -=3;
+            this.sick= false;
+        }
+        else {
+            this.energy--
+            console.log("refusal to take medicine")
+        }
+    }
+    play() {
+        if(this.sick === true) {
+            this.mood--
+            this.energy--
+        }
+        else if(this.mood>9) {
+            this.energy -=2
+            this.full--
+        }
+        else if(this.energy<=3) {
+            this.energy--
+            console.log("I am too tired to play")
+        }
+        else {
+            this.mood+=2
+            this.energy--
+            this.full--
+        }
     }
 }
 // Do not edit below this line
