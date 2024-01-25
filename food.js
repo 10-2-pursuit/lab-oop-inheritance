@@ -6,11 +6,17 @@ class Food {
         this.fresh = fresh
     }
     prepare() {
-        console.log(`${this.name} is being prepared`)
+        console.log(`${this.name} is being prepared.`)
     }
     isFresh() {
         if(this.fresh == false || this.daysToSpoil <= 0) {
-            console.log(`${}`)
+            console.log(`${this.name} has gone bad.`) 
+        } else {
+            console.log(`There are ${this.daysToSpoil} days left before ${this.name} goes bad.`)
+        }
+        aDayPasses() {
+            this.daysToSpoil--
+            this.isFresh();
         }
     }
 }
